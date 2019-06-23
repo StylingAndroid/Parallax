@@ -10,7 +10,7 @@ class SectionsPagerAdapter(
 ) : FragmentStateAdapter(activity) {
 
     override fun createFragment(position: Int): Fragment =
-        ParallaxFragment()
+        ParallaxFragment.newInstance()
 
     fun getPageTitle(position: Int): CharSequence =
         activity.resources.getString(TAB_TITLES[position])

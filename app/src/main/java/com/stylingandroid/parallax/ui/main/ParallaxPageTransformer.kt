@@ -23,11 +23,11 @@ class ParallaxPageTransformer : ViewPager2.PageTransformer {
     }
 
     private fun View.getMappings(): ViewMappings =
-        cache[this] ?: ViewMappings().apply {
-            put(R.id.image_background, findViewById(R.id.image_background))
-            put(R.id.image_middleground, findViewById(R.id.image_middleground))
-            put(R.id.image_foreground, findViewById(R.id.image_foreground))
-            cache[this@getMappings] = this
+        cache[this] ?: ViewMappings().also { mappings ->
+            mappings.put(R.id.image_background, findViewById(R.id.image_background))
+            mappings.put(R.id.image_middleground, findViewById(R.id.image_middleground))
+            mappings.put(R.id.image_foreground, findViewById(R.id.image_foreground))
+            cache[this] = mappings
         }
 
     private class ViewMappings : SparseArray<View>()

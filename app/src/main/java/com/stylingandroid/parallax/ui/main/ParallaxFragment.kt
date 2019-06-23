@@ -14,4 +14,9 @@ class ParallaxFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? = inflater.inflate(R.layout.fragment_main, container, false)
+
+    companion object {
+
+        fun newInstance(): Fragment = ParallaxFragment()
+    }
 }
